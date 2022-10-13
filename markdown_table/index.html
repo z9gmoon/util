@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Convert table markdown</title>
+    textarea {
+        overflow: scroll;
+        white-space: nowrap;
+    }
 </head>
 <body>
 
-    <textarea id="txt"></textarea>
-    <button id="btn">Convert</button>
-    <textarea id="result"></textarea>
+    <div><textarea id="txt" rows="10" cols="100"></textarea></div>
+    <div><button id="btn">Convert</button></div>
+    <div><textarea id="result" rows="10" cols="100"></textarea></div>
     <script type="text/javascript">
         document.getElementById('btn').onclick = function(){
         var a = document.getElementById('txt').value;
