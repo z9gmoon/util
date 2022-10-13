@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
 
+    <textarea id="txt"></textarea>
+    <button id="btn">Convert</button>
+    <textarea id="result"></textarea>
+    <script type="text/javascript">
+        document.getElementById('btn').onclick = function(){
+        var a = document.getElementById('txt').value;
+        var b = a.split('\n');
+        // duplicate header
+        b.splice(1,0,b[0]);
+        // add | each tab
+        var b1 = b.map(i=>i.replace(new RegExp('\t', 'g'),' | ').replace(/^(.*)$/g,"| \$1 |"));
+        // seperate header and result
+        b1[1] = b1[1].replace(/[^\s\|]/g,'-');
+        var b2 = b1.join("\n");
+        document.getElementById('result').value = b2;
+          
+        };
+    </script>
+</body>
+</html>
