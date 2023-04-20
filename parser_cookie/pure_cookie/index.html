@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div><textarea id="txt" rows="30" cols="150"></textarea></div>
+    <div><button id="btn">Convert</button></div>
+    <div><textarea id="result" rows="10" cols="150"></textarea></div>
+    <script type="text/javascript">
+        document.getElementById('btn').onclick = function(){
+        var a = document.getElementById('txt').value;
+        var b = a.split('\n');
+        b.splice(1,0,b[0]);
+        var b1 = b.map(i=>i.split('\t').slice(0,2).join("=")).join("; ");
+        document.getElementById('result').value = b1;
+          
+        };
+    </script>
+</body>
+</html>
